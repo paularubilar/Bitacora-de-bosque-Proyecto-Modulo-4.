@@ -9,7 +9,7 @@ function calcularPromedioFinal(n1, n2, n3) {
     return dividir(sumaTotal, 3);
 }
 
-//plantilla para todad las especies
+//Plantilla para todad las especies
 class Especie {
     constructor(nombre, suelo, brotes, diversidad) {
         this.nombre = nombre;
@@ -23,7 +23,7 @@ class Especie {
 //Almacenamiento
 const historialObservaciones = [];
 
-// LECCIÓN #1: Función para interacción inicial (prompt y alert)
+//  Función para interacción inicial (prompt y alert)
 function saludarUsuario() {
     console.log("Iniciando sistema de monitoreo..."); // Mensaje en consola
     const nombre = prompt("¿Cuál es tu nombre de observador?");
@@ -39,7 +39,7 @@ function hacerCalculo() {
     const pBrotesInput = document.getElementById("puntajeBrotes");
     const pDiversidadInput = document.getElementById("puntajeDiversidad");
 
-    //obtener valores y se convierte a numeros 
+    //Obtener valores y se convierte a numeros 
     const nombre = nombreInput.value;
     const pSuelo = parseInt(pSueloInput.value);
     const pBrotes = parseInt(pBrotesInput.value);
@@ -66,7 +66,7 @@ function hacerCalculo() {
     renderizarHistorial(historialObservaciones);
     limpiarFormulario(nombreInput, pSueloInput, pBrotesInput, pDiversidadInput);
 
-    // REQUERIMIENTO: Ejecución en consola
+    // Ejecución en consola
     console.log("--- Nuevo Registro Detectado ---");
     console.table(nuevaEspecie);
     console.log("Historial actualizado:", historialObservaciones);
@@ -81,7 +81,7 @@ function actualizarDashboard(especie) {
 
     const elementoEstado = document.getElementById("estado-salud");
 
-    // REQUERIMIENTO TÉCNICO: Uso de Condicionales
+    // Uso de Condicionales
     if (promedio >= 8) {
         elementoEstado.innerText = `Excelente: ${especie.nombre} está en un hábitat óptimo.`;
     } else if (promedio >= 5) {
@@ -101,7 +101,7 @@ function renderizarHistorial(datos) {
         const promedio = calcularPromedioFinal(item.suelo, item.brotes, item.diversidad);
         let badgeColor = "";
 
-        // REQUERIMIENTO TÉCNICO: Uso de Switch
+        // Uso de Switch
         switch (true) {
             case (promedio >= 8): badgeColor = "badge-success"; break;
             case (promedio >= 5): badgeColor = "badge-warning"; break;
@@ -118,7 +118,7 @@ function renderizarHistorial(datos) {
         `;
     });
 }
-// filtrado y ciclos (while)
+// filtro y ciclos (while)
 function filtrarEspeciesSaludables() {
     const saludables = historialObservaciones.filter(esp =>  {
         return calcularPromedioFinal(esp.suelo, esp.brotes, esp.diversidad) >=7;
