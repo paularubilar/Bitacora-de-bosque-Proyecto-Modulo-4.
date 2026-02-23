@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora Bosque Esclerófilo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+        <!--Todo el contenido--> 
+<body>
+    <header>
+        <!--Titulo -->
+        <h1>Aprendamos juntos: Monitor de Biodiversidad</h1>
+        <button onclick="saludarUsuario()" class="btn btn-outline-secondary">Iniciar Sesión</button>
+        <!--navegador -->
+        <nav class="nav justify-content-center">
+            <a class="nav-link" href="#Introduccion">Visión y Misión</a>
+            <a class="nav-link" href="#CalculoRegistro">Registros de Observación y Resultados</a>
+            <a class="nav-link" href="#RegistroHistorial">Historial de seguimiento</a>
+        </nav>
+
+    </header>
+
+    <main>
+        <!--Imagen contexto-->
+        <div class="ImgIntroduccion container">
+            <img class="img-fluid img-bosque" src="./assets/img/bosqueEsclerofilo.jpg" alt="arbol tipo roble con vista desde abajo un tronco agrietado y ramas que dan a un cielo azul">
+        </div>
+
+        <!--Introducción al proyecto-->
+        <section>
+            <h2 id="Introduccion">Visión y Misión</h2>
+            <p>Esta inicitiava nace por el amor a la biodiversidad de los ecosistemas y la preocupación por el medio ambiente. </p>
+<div class="Introduccion container">
+    <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Visión</h5>
+              <p class="card-text">"Nuestra visión es restaurar el vínculo ancestral entre el ser humano y el bosque esclerófilo, transformando la convivencia diaria en un acto de protección activa. Aspiramos a un futuro donde cada ciudadano sea un guardián consciente de su entorno, logrando regenerar los ecosistemas deteriorados a través del conocimiento y la valoración de la red de vida que nos sostiene."</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Misión</h5>
+              <p class="card-text">"Existimos para visibilizar que el bosque no es solo un conjunto de árboles, sino un ecosistema interconectado de retroalimentación positiva entre flora, fauna y fungi. Nuestra misión es proporcionar herramientas tecnológicas de monitoreo que generen conciencia sobre la biodiversidad local, promoviendo un bienestar integral donde la salud humana y la salud del ecosistema se entiendan como una sola."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+</section>
+<!--Seccion de registro y calculo de bosque observado-->
+
+<section class="CalculoSalud container">
+    <div class="row">
+        <div class="card-body">
+            <h3 id="CalculoRegistro" class="card-title text-center">Registro de Observación y Resultados</h3>
+            
+            <div class="form-group">
+                <label for="nombreEspecie">Nombre de la especie</label>
+                <input type="text" class="form-control" id="nombreEspecie" placeholder="Ej: Quillay">
+            </div>
+
+            <div class="form-group">
+                <label class="font-weight-bold">1. Calidad del Suelo (1 al 10):</label>
+                <input type="number" id="puntajeSuelo" class="form-control" min="1" max="10" placeholder="Considere 1 como suelo seco, sin vida y 10 muy enriquecido y humedo ">
+            </div>
+
+            <div class="form-group">
+                <label class="font-weight-bold">2. Brotes nuevos (1 al 10):</label>
+                <input type="number" id="puntajeBrotes" class="form-control" min="1" max="10" placeholder="Considere 1 como sin brotes y 10 muchos brotes">
+            </div>
+
+            <div class="form-group">
+                <label class="font-weight-bold">3. Diversidad de especies (1 al 10):</label>
+                <input type="number" id="puntajeDiversidad" class="form-control" min="1" max="10" placeholder="Cantidad de especies distintas alrededor">
+            </div>
+
+            <button type="button" class="btn btn-success btn-block mt-3 boton-registro" onclick="hacerCalculo()">Calcular Salud</button>
+        </div>
+    </div>
+</section>
+
+
+<!--Resultado y estado del bosque-->
+<section id="dashboard" class="Resultado container mb-5">
+    <div class="row">
+        <div class="col-md-12 mb-3">
+            <div class="card text-center shadow-sm">
+                <h3>Total Especies</h3>
+                <p id="conteo-total" class="display-4 font-weight-bold">0</p>
+            </div>
+        </div>
+        <div class="col-md-12 mb-3">
+            <div class="card text-center shadow-sm">
+                <h3>Estado de Salud</h3>
+                <p id="estado-salud" class="lead">Sin registros</p>
+            </div>
+        </div>
+        <div class="col-md-12 mb-3">
+            <div class="card text-center shadow-sm">
+                <h3>Índice de Vitalidad</h3>
+                <p id="indice-vitalidad" class="display-4 font-weight-bold">0%</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Registro historial-->
+<section class=" registro container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header text-white">
+            <h4 id="RegistroHistorial" class="mb-0">Historial de seguimiento</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Especie</th>
+                            <th>Salud</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-historial">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="filtrarEspeciesSaludables()">Filtrar Saludables</button>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="mostrarTodo()">Ver Todos</button>
+    </div>
+</section>
+
+    </main>
+    <!--Pie de página-->
+    <footer class="bg-dark text-white pt-4 pb-2">
+        <div class="container text-center">
+            <p>Monitor de Biodiversidad - Aprendamos Juntos</p>
+            <p class="small">© 2026 Registro de Flora, Fauna y Fungi</p>
+        </div>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/*  Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body  {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #f0e0b8;
+    color: #4a4a4a;
+    text-align: center;
+    line-height: 1.8;
+}
+
+header {
+    background-color: #2d4c3b; /* Verde bosque profundo */
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+}
+nav {
+    background-color: #3e5c4a;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+color: #f2e8cf;
+margin: 0 15px;
+}
+nav a:hover {
+    color: #e07a5f; /* Color arcilla al pasar el mouse */
+  }
+  /*estilos generales para las secciones*/
+section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+
+.img-bosque {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+.boton-registro {
+background-color:#bc8a5f ;
+border: #2d4c3b;
+border-radius: 20px;
+}
+#conteo-total {
+    color:#2c573f;
+}
+#estado-salud {
+    color: #695537; /* Aquí pones el color que quieras (ej. verde bosque) */
+}
+#indice-vitalidad  {
+    color: #2c573f;
+}
+.registro h4 {
+    background-color: #2d4c3b;
+}
+
+/* pie de pagina*/
+footer {
+    background-color: #2d4c3b;
+    color: #a3b18a;
+    text-align: center;
+}
