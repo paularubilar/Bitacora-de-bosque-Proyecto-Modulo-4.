@@ -3,7 +3,7 @@
 const sumar = (a, b, c) => a + b + c;
 const dividir = (total, cantidad) => total / cantidad;
 
-// Función que llama a otras funciones para optimizar (Lección #4)
+// Función que llama a otras funciones para optimizar
 function calcularPromedioFinal(n1, n2, n3) {
     const sumaTotal = sumar(n1, n2, n3);
     return dividir(sumaTotal, 3);
@@ -17,6 +17,10 @@ class Especie {
         this.brotes = brotes;
         this.diversidad = diversidad;
         this.fecha = new Date().toLocaleDateString();
+    }
+    // Método dentro del objeto
+    obtenerResumen() {
+        return `Especie: ${this.nombre} registrada el ${this.fecha}`;
     }
 } 
 
